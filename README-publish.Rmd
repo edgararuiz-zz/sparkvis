@@ -1,0 +1,75 @@
+---
+title: "sparkvis"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**sparkvis** adds the necessary methods to **ggvis** to allow it to handle **sparklyr's** *tbl_spark* class data sets.  
+
+One of the methods is a **compute_bin** variance to calculate a histogram's bins inside Spark and then collect results, thus reducing the amount of data brought over into memory.  **Limitation**: The function only works with straigth column names not formulas, so while *~mpg* will work, *~factor(am)* will not.
+
+Future plans are to create more compute methods that will open other layers to *tbl_spark* data sets.
+
+### Installation
+
+You can install **sparkvis** from GitHub
+
+```{r, eval = FALSE}
+devtools::install_github("edgararuiz/sparkvis")
+```
+
+### Load needed libraries
+
+
+```{r, eval = FALSE}
+library(sparklyr)
+library(ggvis)
+library(sparkvis)
+```
+
+```{r, include = FALSE, eval = TRUE}
+library(sparklyr)
+library(ggvis)
+library(sparkvis)
+```
+
+### Create a new Spark connection
+
+```{r}
+conf <- spark_config()
+conf$`sparklyr.shell.driver-memory` <- "8G"
+sc <- spark_connect(master="local", config = conf, version = "2.1.0")
+```
+
+### Copying mtcars to the Spark environment
+
+```{r}
+spark_mtcars <- copy_to(sc, mtcars)
+```
+
+### Comparison
+
+#### Using a standard data frame
+
+```{r}
+mtcars %>% 
+  ggvis(~mpg) %>% 
+  layer_histograms(width = 5, stack = FALSE) 
+```
+
+#### Now using a Spark table
+
+
+```{r}
+spark_mtcars %>% 
+  ggvis(~mpg) %>% 
+  layer_histograms(width = 5, stack = FALSE) 
+```
+
+### Closing connection
+
+```{r}
+spark_disconnect(sc)
+```
