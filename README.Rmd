@@ -12,6 +12,8 @@ One of the methods is a **compute_bin** variance to calculate a histogram's bins
 
 Implemented *ggvis* layers:
 
+- layer_bars
+
 - layer_boxplots
 
 - layer_histograms
