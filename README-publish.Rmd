@@ -8,9 +8,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **sparkvis** adds the necessary methods to **ggvis** to allow it to handle **sparklyr's** *tbl_spark* class data sets.  
 
-One of the methods is a **compute_bin** variance to calculate a histogram's bins inside Spark and then collect results, thus reducing the amount of data brought over into memory.  **Limitation**: The function only works with straigth column names not formulas, so while *~mpg* will work, *~factor(am)* will not.
+Currently implemented **layers**:
 
-Future plans are to create more compute methods that will open other layers to *tbl_spark* data sets.
+- layer_boxplot
+
+- layer_histograms
 
 ### Installation
 
@@ -27,12 +29,14 @@ devtools::install_github("edgararuiz/sparkvis")
 library(sparklyr)
 library(ggvis)
 library(sparkvis)
+library(nycflights13)
 ```
 
 ```{r, include = FALSE, eval = TRUE}
 library(sparklyr)
 library(ggvis)
 library(sparkvis)
+library(nycflights13)
 ```
 
 ### Create a new Spark connection
@@ -43,30 +47,45 @@ conf$`sparklyr.shell.driver-memory` <- "8G"
 sc <- spark_connect(master="local", config = conf, version = "2.1.0")
 ```
 
-### Copying mtcars to the Spark environment
-
-```{r}
-spark_mtcars <- copy_to(sc, mtcars)
-```
-
-### Comparison
-
-#### Using a standard data frame
-
-```{r}
-mtcars %>% 
-  ggvis(~mpg) %>% 
-  layer_histograms(width = 5, stack = FALSE) 
-```
-
-#### Now using a Spark table
+### Copying 'flights' to the Spark environment
 
 
 ```{r}
-spark_mtcars %>% 
-  ggvis(~mpg) %>% 
-  layer_histograms(width = 5, stack = FALSE) 
+spark_flights <- copy_to(sc, flights)
 ```
+
+## Box Plot
+
+```{r}
+spark_flights %>% 
+  ggvis(~carrier,  ~distance) %>% 
+  layer_boxplots()
+```
+
+```{r}
+spark_flights %>% 
+  ggvis(~carrier,  ~arr_delay) %>% 
+  layer_boxplots()
+```
+
+## Histogram
+
+
+```{r}
+spark_flights %>% 
+  dplyr::filter(distance > 0) %>%
+  ggvis(~distance) %>% 
+  layer_histograms( stack = FALSE, width = 300) 
+```
+
+```{r}
+spark_flights %>% 
+  dplyr::filter(arr_delay < 200) %>%
+  ggvis(~arr_delay) %>% 
+  layer_histograms( stack = FALSE, width = 20) 
+```
+
+
 
 ### Closing connection
 

@@ -3,8 +3,14 @@ sparkvis
 
 **sparkvis** adds the necessary methods to **ggvis** to allow it to handle **sparklyr's** *tbl\_spark* class data sets.
 
-One of the methods is a **compute\_bin** variance to calculate a histogram's bins inside Spark and then collect results, thus reducing the amount of data brought over into memory. **Limitation**: The function only works with straigth column names not formulas, so while *~mpg* will work, *~factor(am)* will not.
+One of the methods is a **compute\_bin** variance to calculate a histogram's bins inside Spark and then collect results, thus reducing the amount of data brought over into memory.
 
-Future plans are to create more compute methods that will open other layers to *tbl\_spark* data sets.
+Implemented *ggvis* layers:
+
+-   layer\_boxplot
+
+-   layer\_histograms
+
+**Limitation**: The functions only works with straigth column names not formulas, so while *~mpg* will work, *~factor(am)* will not.
 
 To see an example click here: [sparkvis R Markdown](http://colorado.rstudio.com:3939/content/429/README-publish.html)

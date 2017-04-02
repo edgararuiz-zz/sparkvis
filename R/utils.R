@@ -7,8 +7,22 @@ apply_props.tbl_spark <- function(data, props) {
 
 #' @export
 prop_type.tbl_spark <- function(data, prop) {
-    ggvis::vector_type(ggvis:::prop_value(prop, data))
-  }
+
+  if("tbl_spark" %in% class(data))
+  {
+    x_var <- as.character(prop$value)
+    suppressMessages({
+      top_rows <- data %>%
+        dplyr::select_(x_var) %>%
+        dplyr::top_n(10) %>%
+        dplyr::collect()
+    })
+    s <- ggvis::vector_type(top_rows[[x_var]])
+    return(s)
+
+  }else
+  {ggvis::vector_type(ggvis:::prop_value(prop, data))}
+}
 
 
 #' @export
@@ -48,6 +62,7 @@ compute_bin.tbl_spark  <- function(x, x_var, w_var = NULL,
   xmax <- s$max_x
   xmean <- s$mean_x
 
+  width <- ifelse(is.null(width), 1, width)
 
   bins <- ceiling((xmax - xmin) / width)
 
@@ -122,7 +137,57 @@ compute_count.spark_tbl <- function(x, x_var, w_var = NULL) {
   s <- dplyr::select(s, count_, x_)
   s <- dplyr::collect(s)
 
+  s <- as.data.frame(s,  stringsAsFactors = FALSE)
+
+
   return(s)
 
 }
+
+#' @export
+compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
+
+  x_var <- as.character(var)[2]
+
+  s <- dplyr::mutate_(x , x_var = var)
+  s <- dplyr::summarise(s, min_ = percentile(x_var, 0),
+              lower_ = percentile(x_var, 0.25),
+              median_ = percentile(x_var, 0.50),
+              upper_ = percentile(x_var, 0.75),
+              max_ = percentile(x_var, 0.99))
+  s<- dplyr::collect(s)
+  s<- dplyr::mutate(s, outliers_ = list(numeric()))
+
+  s <- as.data.frame(s,  stringsAsFactors = FALSE)
+
+  groups <- dplyr::select(s, -min_, -lower_, -median_, -upper_, -max_, -outliers_)
+
+  groups <- colnames(groups)
+
+  s <- dplyr::group_by_(s, groups)
+  s <- dplyr::arrange_(s, groups)
+
+  return(s)
+
+}
+
+compute_boxplot_outliers.tbl_spark <- function(x) {
+
+
+  groups <- dplyr::select(x, -min_, -lower_, -median_, -upper_, -max_, -outliers_)
+
+  groups <- colnames(groups)
+
+  outliers <- data.frame(x_var = character(), value_ = numeric())
+
+  outliers <- data_frame(x_var = "", value_ = 0)
+
+  colnames(outliers) <- c(groups, "value_")
+
+
+  return(outliers)
+  #outliers <- as.data.frame(outliers,  stringsAsFactors = FALSE)
+
+}
+
 

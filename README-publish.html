@@ -130,8 +130,11 @@ $(document).ready(function () {
 
 
 <p><strong>sparkvis</strong> adds the necessary methods to <strong>ggvis</strong> to allow it to handle <strong>sparklyr’s</strong> <em>tbl_spark</em> class data sets.</p>
-<p>One of the methods is a <strong>compute_bin</strong> variance to calculate a histogram’s bins inside Spark and then collect results, thus reducing the amount of data brought over into memory. <strong>Limitation</strong>: The function only works with straigth column names not formulas, so while <em>~mpg</em> will work, <em>~factor(am)</em> will not.</p>
-<p>Future plans are to create more compute methods that will open other layers to <em>tbl_spark</em> data sets.</p>
+<p>Currently implemented <strong>layers</strong>:</p>
+<ul>
+<li><p>layer_boxplot</p></li>
+<li><p>layer_histograms</p></li>
+</ul>
 <div id="installation" class="section level3">
 <h3>Installation</h3>
 <p>You can install <strong>sparkvis</strong> from GitHub</p>
@@ -141,7 +144,8 @@ $(document).ready(function () {
 <h3>Load needed libraries</h3>
 <pre class="r"><code>library(sparklyr)
 library(ggvis)
-library(sparkvis)</code></pre>
+library(sparkvis)
+library(nycflights13)</code></pre>
 </div>
 <div id="create-a-new-spark-connection" class="section level3">
 <h3>Create a new Spark connection</h3>
@@ -149,38 +153,702 @@ library(sparkvis)</code></pre>
 conf$`sparklyr.shell.driver-memory` &lt;- &quot;8G&quot;
 sc &lt;- spark_connect(master=&quot;local&quot;, config = conf, version = &quot;2.1.0&quot;)</code></pre>
 </div>
-<div id="copying-mtcars-to-the-spark-environment" class="section level3">
-<h3>Copying mtcars to the Spark environment</h3>
-<pre class="r"><code>spark_mtcars &lt;- copy_to(sc, mtcars)</code></pre>
+<div id="copying-flights-to-the-spark-environment" class="section level3">
+<h3>Copying ‘flights’ to the Spark environment</h3>
+<pre class="r"><code>spark_flights &lt;- copy_to(sc, flights)</code></pre>
 </div>
-<div id="comparison" class="section level3">
-<h3>Comparison</h3>
-<div id="using-a-standard-data-frame" class="section level4">
-<h4>Using a standard data frame</h4>
-<pre class="r"><code>mtcars %&gt;% 
-  ggvis(~mpg) %&gt;% 
-  layer_histograms(width = 5, stack = FALSE) </code></pre>
-<div id="plot_id774489816-container" class="ggvis-output-container">
-<div id="plot_id774489816" class="ggvis-output"></div>
+<div id="box-plot" class="section level2">
+<h2>Box Plot</h2>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier,  ~distance) %&gt;% 
+  layer_boxplots()</code></pre>
+<div id="plot_id690277150-container" class="ggvis-output-container">
+<div id="plot_id690277150" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id774489816_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id774489816" data-renderer="svg">SVG</a>
+<a id="plot_id690277150_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id690277150" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id774489816_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id774489816" data-renderer="canvas">Canvas</a>
+<a id="plot_id690277150_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id690277150" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id774489816_download" class="ggvis-download" data-plot-id="plot_id774489816">Download</a>
+<a id="plot_id690277150_download" class="ggvis-download" data-plot-id="plot_id690277150">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id774489816_spec = {
+var plot_id690277150_spec = {
+  "data": [
+    {
+      "name": ".0/group_by1/boxplot2_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "min_": "number",
+          "max_": "number",
+          "lower_": "number",
+          "upper_": "number",
+          "median_": "number"
+        }
+      },
+      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n94,1391,\"9E\",228,740,509\n187,2586,\"AA\",888,1521,1096\n2402,2402,\"AS\",2402,2402,2402\n173,2586,\"B6\",340,1428,1023\n94,2586,\"DL\",762,1598,1020\n80,1215,\"EV\",284,748,533\n1620,1620,\"F9\",1620,1620,1620\n397,762,\"FL\",397,762,762\n4983,4983,\"HA\",4983,4983,4983\n184,1147,\"MQ\",431,762,502\n229,1008,\"OO\",419,419,419\n116,2586,\"UA\",937,2425,1400\n17,2153,\"US\",214,544,529\n2248,2586,\"VX\",2475,2586,2475\n169,2133,\"WN\",725,1411,748\n96,544,\"YV\",229,544,229"
+    },
+    {
+      "name": ".0/group_by1/boxplot2",
+      "source": ".0/group_by1/boxplot2_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "value_": "number"
+        }
+      },
+      "values": "\"value_\",\"carrier\"\n"
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3",
+      "source": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/xcenter",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n-231.3\n5231.3"
+    }
+  ],
+  "scales": [
+    {
+      "padding": 0.1,
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "points": false,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "points": true,
+      "padding": 1.1,
+      "name": "xcenter",
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/xcenter",
+        "field": "data.domain"
+      },
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.min_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.max_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              },
+              "width": {
+                "value": 0.5
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.lower_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.upper_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.median_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              },
+              "height": {
+                "value": 1
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2/boxplot_outliers3"
+      },
+      "marks": [
+        {
+          "type": "symbol",
+          "properties": {
+            "update": {
+              "size": {
+                "value": 50
+              },
+              "fill": {
+                "value": "black"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.value_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2/boxplot_outliers3"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "carrier"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "distance"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id690277150").parseSpec(plot_id690277150_spec);
+</script>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier,  ~arr_delay) %&gt;% 
+  layer_boxplots()</code></pre>
+<div id="plot_id833889805-container" class="ggvis-output-container">
+<div id="plot_id833889805" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id833889805_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id833889805" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id833889805_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id833889805" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id833889805_download" class="ggvis-download" data-plot-id="plot_id833889805">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id833889805_spec = {
+  "data": [
+    {
+      "name": ".0/group_by1/boxplot2_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "min_": "number",
+          "max_": "number",
+          "lower_": "number",
+          "upper_": "number",
+          "median_": "number"
+        }
+      },
+      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n-68,216,\"9E\",-21,15,-7\n-75,173,\"AA\",-21,8,-9\n-74,132,\"AS\",-32,2,-17\n-71,185,\"B6\",-14,17,-3\n-71,183.43,\"DL\",-20,8,-8\n-62,211.93,\"EV\",-14,26,-1\n-47,239.6,\"F9\",-9,31,6\n-44,263.299999999999,\"FL\",-7,24,5\n-70,125.59,\"HA\",-27.75,2.75,-13\n-53,177,\"MQ\",-13,18,-1\n-26,152.24,\"OO\",-16,6,-7\n-75,178,\"UA\",-18,12,-6\n-70,141,\"US\",-15,8,-6\n-86,222.85,\"VX\",-23,8,-9\n-58,212,\"WN\",-15,15,-3\n-46,212,\"YV\",-16,24.25,-2"
+    },
+    {
+      "name": ".0/group_by1/boxplot2",
+      "source": ".0/group_by1/boxplot2_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "value_": "number"
+        }
+      },
+      "values": "\"value_\",\"carrier\"\n"
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3",
+      "source": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/xcenter",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n-103.465\n280.764999999999"
+    }
+  ],
+  "scales": [
+    {
+      "padding": 0.1,
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "points": false,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "points": true,
+      "padding": 1.1,
+      "name": "xcenter",
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/xcenter",
+        "field": "data.domain"
+      },
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.min_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.max_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              },
+              "width": {
+                "value": 0.5
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.lower_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.upper_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.median_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              },
+              "height": {
+                "value": 1
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2/boxplot_outliers3"
+      },
+      "marks": [
+        {
+          "type": "symbol",
+          "properties": {
+            "update": {
+              "size": {
+                "value": 50
+              },
+              "fill": {
+                "value": "black"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.value_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2/boxplot_outliers3"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "carrier"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "arr_delay"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id833889805").parseSpec(plot_id833889805_spec);
+</script>
+</div>
+<div id="histogram" class="section level2">
+<h2>Histogram</h2>
+<pre class="r"><code>spark_flights %&gt;% 
+  dplyr::filter(distance &gt; 0) %&gt;%
+  ggvis(~distance) %&gt;% 
+  layer_histograms( stack = FALSE, width = 300) </code></pre>
+<div id="plot_id461182658-container" class="ggvis-output-container">
+<div id="plot_id461182658" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id461182658_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id461182658" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id461182658_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id461182658" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id461182658_download" class="ggvis-download" data-plot-id="plot_id461182658">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id461182658_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -192,7 +860,7 @@ var plot_id774489816_spec = {
           "count_": "number"
         }
       },
-      "values": "\"xmin_\",\"xmax_\",\"count_\"\n7.5,12.5,2\n12.5,17.5,10\n17.5,22.5,11\n22.5,27.5,5\n27.5,32.5,3\n32.5,37.5,1"
+      "values": "\"xmin_\",\"xmax_\",\"count_\"\n-310.087396370288,-10.0873963702877,0\n-10.0873963702877,289.912603629712,49671\n289.912603629712,589.912603629712,56716\n589.912603629712,889.912603629712,65078\n889.912603629712,1189.91260362971,73869\n1189.91260362971,1489.91260362971,18729\n1489.91260362971,1789.91260362971,18221\n1789.91260362971,2089.91260362971,2797\n2089.91260362971,2389.91260362971,10672\n2389.91260362971,2689.91260362971,40308\n2689.91260362971,2989.91260362971,0\n2989.91260362971,3289.91260362971,0\n3289.91260362971,3589.91260362971,8\n3589.91260362971,3889.91260362971,0\n3889.91260362971,4189.91260362971,0\n4189.91260362971,4489.91260362971,0\n4489.91260362971,4789.91260362971,0\n4789.91260362971,5089.91260362971,707"
     },
     {
       "name": "scale/x",
@@ -202,7 +870,7 @@ var plot_id774489816_spec = {
           "domain": "number"
         }
       },
-      "values": "\"domain\"\n6\n39"
+      "values": "\"domain\"\n-580.087396370288\n5359.91260362971"
     },
     {
       "name": "scale/y",
@@ -212,7 +880,7 @@ var plot_id774489816_spec = {
           "domain": "number"
         }
       },
-      "values": "\"domain\"\n0\n11.55"
+      "values": "\"domain\"\n0\n77562.45"
     }
   ],
   "scales": [
@@ -286,7 +954,7 @@ var plot_id774489816_spec = {
       "orient": "bottom",
       "layer": "back",
       "grid": true,
-      "title": "mpg"
+      "title": "distance"
     },
     {
       "type": "y",
@@ -310,35 +978,33 @@ var plot_id774489816_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id774489816").parseSpec(plot_id774489816_spec);
+ggvis.getPlot("plot_id461182658").parseSpec(plot_id461182658_spec);
 </script>
-</div>
-<div id="now-using-a-spark-table" class="section level4">
-<h4>Now using a Spark table</h4>
-<pre class="r"><code>spark_mtcars %&gt;% 
-  ggvis(~mpg) %&gt;% 
-  layer_histograms(width = 5, stack = FALSE) </code></pre>
-<div id="plot_id336838824-container" class="ggvis-output-container">
-<div id="plot_id336838824" class="ggvis-output"></div>
+<pre class="r"><code>spark_flights %&gt;% 
+  dplyr::filter(arr_delay &lt; 200) %&gt;%
+  ggvis(~arr_delay) %&gt;% 
+  layer_histograms( stack = FALSE, width = 20) </code></pre>
+<div id="plot_id462505832-container" class="ggvis-output-container">
+<div id="plot_id462505832" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id336838824_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id336838824" data-renderer="svg">SVG</a>
+<a id="plot_id462505832_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id462505832" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id336838824_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id336838824" data-renderer="canvas">Canvas</a>
+<a id="plot_id462505832_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id462505832" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id336838824_download" class="ggvis-download" data-plot-id="plot_id336838824">Download</a>
+<a id="plot_id462505832_download" class="ggvis-download" data-plot-id="plot_id462505832">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id336838824_spec = {
+var plot_id462505832_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -350,7 +1016,7 @@ var plot_id336838824_spec = {
           "count_": "number"
         }
       },
-      "values": "\"xmin_\",\"xmax_\",\"count_\"\n7.590625,12.590625,2\n12.590625,17.590625,10\n17.590625,22.590625,11\n22.590625,27.590625,5\n27.590625,32.590625,3\n32.590625,37.590625,1"
+      "values": "\"xmin_\",\"xmax_\",\"count_\"\n-105.401871722021,-85.4018717220212,1\n-85.4018717220212,-65.4018717220212,56\n-65.4018717220212,-45.4018717220212,2448\n-45.4018717220212,-25.4018717220212,33130\n-25.4018717220212,-5.40187172202124,123512\n-5.40187172202124,14.5981282779788,88099\n14.5981282779788,34.5981282779788,33206\n34.5981282779788,54.5981282779788,15795\n54.5981282779788,74.5981282779788,9389\n74.5981282779788,94.5981282779788,6265\n94.5981282779788,114.598128277979,4411\n114.598128277979,134.598128277979,3025\n134.598128277979,154.598128277979,2215\n154.598128277979,174.598128277979,1583\n174.598128277979,194.598128277979,1168\n194.598128277979,214.598128277979,211"
     },
     {
       "name": "scale/x",
@@ -360,7 +1026,7 @@ var plot_id336838824_spec = {
           "domain": "number"
         }
       },
-      "values": "\"domain\"\n6.090625\n39.090625"
+      "values": "\"domain\"\n-121.401871722021\n230.598128277979"
     },
     {
       "name": "scale/y",
@@ -370,7 +1036,7 @@ var plot_id336838824_spec = {
           "domain": "number"
         }
       },
-      "values": "\"domain\"\n0\n11.55"
+      "values": "\"domain\"\n0\n129687.6"
     }
   ],
   "scales": [
@@ -444,7 +1110,7 @@ var plot_id336838824_spec = {
       "orient": "bottom",
       "layer": "back",
       "grid": true,
-      "title": "mpg"
+      "title": "arr_delay"
     },
     {
       "type": "y",
@@ -468,13 +1134,12 @@ var plot_id336838824_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id336838824").parseSpec(plot_id336838824_spec);
+ggvis.getPlot("plot_id462505832").parseSpec(plot_id462505832_spec);
 </script>
-</div>
-</div>
 <div id="closing-connection" class="section level3">
 <h3>Closing connection</h3>
 <pre class="r"><code>spark_disconnect(sc)</code></pre>
+</div>
 </div>
 
 
