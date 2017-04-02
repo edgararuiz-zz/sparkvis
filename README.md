@@ -7,7 +7,7 @@ One of the methods is a **compute\_bin** variance to calculate a histogram's bin
 
 Implemented *ggvis* layers:
 
--   layer\_boxplot
+-   layer\_boxplots
 
 -   layer\_histograms
 

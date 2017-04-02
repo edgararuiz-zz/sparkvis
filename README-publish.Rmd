@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Currently implemented **layers**:
 
-- layer_boxplot
+- layer_boxplots
 
 - layer_histograms
 
