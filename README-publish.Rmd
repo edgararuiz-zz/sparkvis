@@ -56,6 +56,8 @@ spark_flights <- copy_to(sc, flights)
 
 ## Box Plot
 
+**Outliers** are not implemented in this initial version.  Need to find a more appropiate way to display them when working with Big Data.
+
 ```{r}
 spark_flights %>% 
   ggvis(~carrier,  ~distance) %>% 

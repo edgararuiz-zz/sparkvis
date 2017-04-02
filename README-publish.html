@@ -159,30 +159,31 @@ sc &lt;- spark_connect(master=&quot;local&quot;, config = conf, version = &quot;
 </div>
 <div id="box-plot" class="section level2">
 <h2>Box Plot</h2>
+<p><strong>Outliers</strong> are not implemented in this initial version. Need to find a more appropiate way to display them when working with Big Data.</p>
 <pre class="r"><code>spark_flights %&gt;% 
   ggvis(~carrier,  ~distance) %&gt;% 
   layer_boxplots()</code></pre>
-<div id="plot_id369343033-container" class="ggvis-output-container">
-<div id="plot_id369343033" class="ggvis-output"></div>
+<div id="plot_id885367332-container" class="ggvis-output-container">
+<div id="plot_id885367332" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id369343033_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id369343033" data-renderer="svg">SVG</a>
+<a id="plot_id885367332_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id885367332" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id369343033_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id369343033" data-renderer="canvas">Canvas</a>
+<a id="plot_id885367332_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id885367332" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id369343033_download" class="ggvis-download" data-plot-id="plot_id369343033">Download</a>
+<a id="plot_id885367332_download" class="ggvis-download" data-plot-id="plot_id885367332">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id369343033_spec = {
+var plot_id885367332_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -488,32 +489,32 @@ var plot_id369343033_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id369343033").parseSpec(plot_id369343033_spec);
+ggvis.getPlot("plot_id885367332").parseSpec(plot_id885367332_spec);
 </script>
 <pre class="r"><code>spark_flights %&gt;% 
   ggvis(~carrier,  ~arr_delay) %&gt;% 
   layer_boxplots()</code></pre>
-<div id="plot_id578442266-container" class="ggvis-output-container">
-<div id="plot_id578442266" class="ggvis-output"></div>
+<div id="plot_id839434952-container" class="ggvis-output-container">
+<div id="plot_id839434952" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id578442266_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578442266" data-renderer="svg">SVG</a>
+<a id="plot_id839434952_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id839434952" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id578442266_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578442266" data-renderer="canvas">Canvas</a>
+<a id="plot_id839434952_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id839434952" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id578442266_download" class="ggvis-download" data-plot-id="plot_id578442266">Download</a>
+<a id="plot_id839434952_download" class="ggvis-download" data-plot-id="plot_id839434952">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id578442266_spec = {
+var plot_id839434952_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -819,7 +820,7 @@ var plot_id578442266_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id578442266").parseSpec(plot_id578442266_spec);
+ggvis.getPlot("plot_id839434952").parseSpec(plot_id839434952_spec);
 </script>
 </div>
 <div id="histogram" class="section level2">
@@ -828,27 +829,27 @@ ggvis.getPlot("plot_id578442266").parseSpec(plot_id578442266_spec);
   dplyr::filter(distance &gt; 0) %&gt;%
   ggvis(~distance) %&gt;% 
   layer_histograms( stack = FALSE, width = 300) </code></pre>
-<div id="plot_id108924525-container" class="ggvis-output-container">
-<div id="plot_id108924525" class="ggvis-output"></div>
+<div id="plot_id963858096-container" class="ggvis-output-container">
+<div id="plot_id963858096" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id108924525_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id108924525" data-renderer="svg">SVG</a>
+<a id="plot_id963858096_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id963858096" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id108924525_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id108924525" data-renderer="canvas">Canvas</a>
+<a id="plot_id963858096_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id963858096" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id108924525_download" class="ggvis-download" data-plot-id="plot_id108924525">Download</a>
+<a id="plot_id963858096_download" class="ggvis-download" data-plot-id="plot_id963858096">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id108924525_spec = {
+var plot_id963858096_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -978,33 +979,33 @@ var plot_id108924525_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id108924525").parseSpec(plot_id108924525_spec);
+ggvis.getPlot("plot_id963858096").parseSpec(plot_id963858096_spec);
 </script>
 <pre class="r"><code>spark_flights %&gt;% 
   dplyr::filter(arr_delay &lt; 200) %&gt;%
   ggvis(~arr_delay) %&gt;% 
   layer_histograms( stack = FALSE, width = 20) </code></pre>
-<div id="plot_id172133717-container" class="ggvis-output-container">
-<div id="plot_id172133717" class="ggvis-output"></div>
+<div id="plot_id947708460-container" class="ggvis-output-container">
+<div id="plot_id947708460" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id172133717_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id172133717" data-renderer="svg">SVG</a>
+<a id="plot_id947708460_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id947708460" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id172133717_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id172133717" data-renderer="canvas">Canvas</a>
+<a id="plot_id947708460_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id947708460" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id172133717_download" class="ggvis-download" data-plot-id="plot_id172133717">Download</a>
+<a id="plot_id947708460_download" class="ggvis-download" data-plot-id="plot_id947708460">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id172133717_spec = {
+var plot_id947708460_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -1134,7 +1135,7 @@ var plot_id172133717_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id172133717").parseSpec(plot_id172133717_spec);
+ggvis.getPlot("plot_id947708460").parseSpec(plot_id947708460_spec);
 </script>
 <div id="closing-connection" class="section level3">
 <h3>Closing connection</h3>
