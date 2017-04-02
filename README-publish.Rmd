@@ -10,9 +10,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Currently implemented **layers**:
 
+- layer_bars
+
 - layer_boxplots
 
 - layer_histograms
+
+To do:
+
+- Add support to Fill prop, especially for layer_bars
+
 
 ### Installation
 
@@ -54,9 +61,39 @@ sc <- spark_connect(master="local", config = conf, version = "2.1.0")
 spark_flights <- copy_to(sc, flights)
 ```
 
+
+## Bar chart
+
+### Discrete X 
+
+```{r}
+spark_flights %>% 
+  ggvis(~carrier) %>% 
+  layer_bars()
+```
+
+### Convert Continuos X into Discrete (a.k.a w/o using as.factor)
+
+```{r}
+spark_flights %>% 
+  dplyr::mutate(hour = as.character(hour)) %>%
+  ggvis(~hour) %>% 
+  layer_bars()
+```
+
+### Discrete X with a Weight variable
+
+```{r}
+spark_flights %>% 
+  ggvis(~carrier, ~distance) %>%
+  layer_bars(stack = FALSE)
+```
+
+
+
 ## Box Plot
 
-**Outliers** are not implemented in this initial version.  Need to find a more appropiate way to display them when working with Big Data.
+**Outliers** are not implemented in this initial version.  Need to find a more appropriate way to display them when working with Big Data.
 
 ```{r}
 spark_flights %>% 

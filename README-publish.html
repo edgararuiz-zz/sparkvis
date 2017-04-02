@@ -132,8 +132,13 @@ $(document).ready(function () {
 <p><strong>sparkvis</strong> adds the necessary methods to <strong>ggvis</strong> to allow it to handle <strong>sparklyr’s</strong> <em>tbl_spark</em> class data sets.</p>
 <p>Currently implemented <strong>layers</strong>:</p>
 <ul>
+<li><p>layer_bars</p></li>
 <li><p>layer_boxplots</p></li>
 <li><p>layer_histograms</p></li>
+</ul>
+<p>To do:</p>
+<ul>
+<li>Add support to Fill prop, especially for layer_bars</li>
 </ul>
 <div id="installation" class="section level3">
 <h3>Installation</h3>
@@ -157,33 +162,504 @@ sc &lt;- spark_connect(master=&quot;local&quot;, config = conf, version = &quot;
 <h3>Copying ‘flights’ to the Spark environment</h3>
 <pre class="r"><code>spark_flights &lt;- copy_to(sc, flights)</code></pre>
 </div>
-<div id="box-plot" class="section level2">
-<h2>Box Plot</h2>
-<p><strong>Outliers</strong> are not implemented in this initial version. Need to find a more appropiate way to display them when working with Big Data.</p>
+<div id="bar-chart" class="section level2">
+<h2>Bar chart</h2>
+<div id="discrete-x" class="section level3">
+<h3>Discrete X</h3>
 <pre class="r"><code>spark_flights %&gt;% 
-  ggvis(~carrier,  ~distance) %&gt;% 
-  layer_boxplots()</code></pre>
-<div id="plot_id885367332-container" class="ggvis-output-container">
-<div id="plot_id885367332" class="ggvis-output"></div>
+  ggvis(~carrier) %&gt;% 
+  layer_bars()</code></pre>
+<div id="plot_id704310800-container" class="ggvis-output-container">
+<div id="plot_id704310800" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id885367332_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id885367332" data-renderer="svg">SVG</a>
+<a id="plot_id704310800_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id704310800" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id885367332_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id885367332" data-renderer="canvas">Canvas</a>
+<a id="plot_id704310800_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id704310800" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id885367332_download" class="ggvis-download" data-plot-id="plot_id885367332">Download</a>
+<a id="plot_id704310800_download" class="ggvis-download" data-plot-id="plot_id704310800">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id885367332_spec = {
+var plot_id704310800_spec = {
+  "data": [
+    {
+      "name": ".0/count1/stack2",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "stack_lwr_": "number",
+          "stack_upr_": "number"
+        }
+      },
+      "values": "\"x_\",\"stack_lwr_\",\"stack_upr_\"\n\"WN\",0,12275\n\"VX\",0,5162\n\"YV\",0,601\n\"DL\",0,48110\n\"OO\",0,32\n\"B6\",0,54635\n\"F9\",0,685\n\"EV\",0,54173\n\"US\",0,20536\n\"UA\",0,58665\n\"MQ\",0,26397\n\"AA\",0,32729\n\"FL\",0,3260\n\"AS\",0,714\n\"9E\",0,18460\n\"HA\",0,342"
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"WN\"\n\"VX\"\n\"YV\"\n\"DL\"\n\"OO\"\n\"B6\"\n\"F9\"\n\"EV\"\n\"US\"\n\"UA\"\n\"MQ\"\n\"AA\"\n\"FL\"\n\"AS\"\n\"9E\"\n\"HA\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n0\n61598.25"
+    }
+  ],
+  "scales": [
+    {
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "type": "ordinal",
+      "points": false,
+      "padding": 0.1,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "properties": {
+        "update": {
+          "stroke": {
+            "value": "#000000"
+          },
+          "fill": {
+            "value": "#333333"
+          },
+          "x": {
+            "scale": "x",
+            "field": "data.x_"
+          },
+          "y": {
+            "scale": "y",
+            "field": "data.stack_lwr_"
+          },
+          "y2": {
+            "scale": "y",
+            "field": "data.stack_upr_"
+          },
+          "width": {
+            "scale": "x",
+            "band": true
+          }
+        },
+        "ggvis": {
+          "data": {
+            "value": ".0/count1/stack2"
+          }
+        }
+      },
+      "from": {
+        "data": ".0/count1/stack2"
+      }
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "carrier"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "count"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id704310800").parseSpec(plot_id704310800_spec);
+</script>
+</div>
+<div id="convert-continuos-x-into-discrete-a.k.a-wo-using-as.factor" class="section level3">
+<h3>Convert Continuos X into Discrete (a.k.a w/o using as.factor)</h3>
+<pre class="r"><code>spark_flights %&gt;% 
+  dplyr::mutate(hour = as.character(hour)) %&gt;%
+  ggvis(~hour) %&gt;% 
+  layer_bars()</code></pre>
+<div id="plot_id832584845-container" class="ggvis-output-container">
+<div id="plot_id832584845" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id832584845_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id832584845" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id832584845_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id832584845" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id832584845_download" class="ggvis-download" data-plot-id="plot_id832584845">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id832584845_spec = {
+  "data": [
+    {
+      "name": ".0/count1/stack2",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "stack_lwr_": "number",
+          "stack_upr_": "number"
+        }
+      },
+      "values": "\"x_\",\"stack_lwr_\",\"stack_upr_\"\n\"7.0\",0,22821\n\"12.0\",0,18181\n\"20.0\",0,16739\n\"1.0\",0,1\n\"5.0\",0,1953\n\"14.0\",0,21706\n\"21.0\",0,10933\n\"18.0\",0,21783\n\"11.0\",0,16033\n\"16.0\",0,23002\n\"19.0\",0,21441\n\"6.0\",0,25951\n\"15.0\",0,23888\n\"22.0\",0,2639\n\"8.0\",0,27242\n\"9.0\",0,20312\n\"10.0\",0,16708\n\"13.0\",0,19956\n\"17.0\",0,24426\n\"23.0\",0,1061"
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"7.0\"\n\"12.0\"\n\"20.0\"\n\"1.0\"\n\"5.0\"\n\"14.0\"\n\"21.0\"\n\"18.0\"\n\"11.0\"\n\"16.0\"\n\"19.0\"\n\"6.0\"\n\"15.0\"\n\"22.0\"\n\"8.0\"\n\"9.0\"\n\"10.0\"\n\"13.0\"\n\"17.0\"\n\"23.0\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n0\n28604.1"
+    }
+  ],
+  "scales": [
+    {
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "type": "ordinal",
+      "points": false,
+      "padding": 0.1,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "properties": {
+        "update": {
+          "stroke": {
+            "value": "#000000"
+          },
+          "fill": {
+            "value": "#333333"
+          },
+          "x": {
+            "scale": "x",
+            "field": "data.x_"
+          },
+          "y": {
+            "scale": "y",
+            "field": "data.stack_lwr_"
+          },
+          "y2": {
+            "scale": "y",
+            "field": "data.stack_upr_"
+          },
+          "width": {
+            "scale": "x",
+            "band": true
+          }
+        },
+        "ggvis": {
+          "data": {
+            "value": ".0/count1/stack2"
+          }
+        }
+      },
+      "from": {
+        "data": ".0/count1/stack2"
+      }
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "hour"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "count"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id832584845").parseSpec(plot_id832584845_spec);
+</script>
+</div>
+<div id="discrete-x-with-a-weight-variable" class="section level3">
+<h3>Discrete X with a Weight variable</h3>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier, ~distance) %&gt;%
+  layer_bars(stack = FALSE)</code></pre>
+<div id="plot_id601594981-container" class="ggvis-output-container">
+<div id="plot_id601594981" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id601594981_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id601594981" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id601594981_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id601594981" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id601594981_download" class="ggvis-download" data-plot-id="plot_id601594981">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id601594981_spec = {
+  "data": [
+    {
+      "name": ".0/count1",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "count_": "number"
+        }
+      },
+      "values": "\"x_\",\"count_\"\n\"WN\",12229203\n\"VX\",12902327\n\"YV\",225395\n\"DL\",59507317\n\"OO\",16026\n\"B6\",58384137\n\"F9\",1109700\n\"EV\",30498951\n\"US\",11365778\n\"UA\",89705524\n\"MQ\",15033955\n\"AA\",43864584\n\"FL\",2167344\n\"AS\",1715028\n\"9E\",9788152\n\"HA\",1704186"
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"WN\"\n\"VX\"\n\"YV\"\n\"DL\"\n\"OO\"\n\"B6\"\n\"F9\"\n\"EV\"\n\"US\"\n\"UA\"\n\"MQ\"\n\"AA\"\n\"FL\"\n\"AS\"\n\"9E\"\n\"HA\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n0\n94190800.2"
+    }
+  ],
+  "scales": [
+    {
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "type": "ordinal",
+      "points": false,
+      "padding": 0.1,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "properties": {
+        "update": {
+          "stroke": {
+            "value": "#000000"
+          },
+          "fill": {
+            "value": "#333333"
+          },
+          "x": {
+            "scale": "x",
+            "field": "data.x_"
+          },
+          "y": {
+            "scale": "y",
+            "value": 0
+          },
+          "y2": {
+            "scale": "y",
+            "field": "data.count_"
+          },
+          "width": {
+            "scale": "x",
+            "band": true
+          }
+        },
+        "ggvis": {
+          "data": {
+            "value": ".0/count1"
+          }
+        }
+      },
+      "from": {
+        "data": ".0/count1"
+      }
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "carrier"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "distance"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id601594981").parseSpec(plot_id601594981_spec);
+</script>
+</div>
+</div>
+<div id="box-plot" class="section level2">
+<h2>Box Plot</h2>
+<p><strong>Outliers</strong> are not implemented in this initial version. Need to find a more appropriate way to display them when working with Big Data.</p>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier,  ~distance) %&gt;% 
+  layer_boxplots()</code></pre>
+<div id="plot_id869735525-container" class="ggvis-output-container">
+<div id="plot_id869735525" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id869735525_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id869735525" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id869735525_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id869735525" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id869735525_download" class="ggvis-download" data-plot-id="plot_id869735525">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id869735525_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -489,32 +965,32 @@ var plot_id885367332_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id885367332").parseSpec(plot_id885367332_spec);
+ggvis.getPlot("plot_id869735525").parseSpec(plot_id869735525_spec);
 </script>
 <pre class="r"><code>spark_flights %&gt;% 
   ggvis(~carrier,  ~arr_delay) %&gt;% 
   layer_boxplots()</code></pre>
-<div id="plot_id839434952-container" class="ggvis-output-container">
-<div id="plot_id839434952" class="ggvis-output"></div>
+<div id="plot_id965847471-container" class="ggvis-output-container">
+<div id="plot_id965847471" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id839434952_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id839434952" data-renderer="svg">SVG</a>
+<a id="plot_id965847471_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id965847471" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id839434952_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id839434952" data-renderer="canvas">Canvas</a>
+<a id="plot_id965847471_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id965847471" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id839434952_download" class="ggvis-download" data-plot-id="plot_id839434952">Download</a>
+<a id="plot_id965847471_download" class="ggvis-download" data-plot-id="plot_id965847471">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id839434952_spec = {
+var plot_id965847471_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -820,7 +1296,7 @@ var plot_id839434952_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id839434952").parseSpec(plot_id839434952_spec);
+ggvis.getPlot("plot_id965847471").parseSpec(plot_id965847471_spec);
 </script>
 </div>
 <div id="histogram" class="section level2">
@@ -829,27 +1305,27 @@ ggvis.getPlot("plot_id839434952").parseSpec(plot_id839434952_spec);
   dplyr::filter(distance &gt; 0) %&gt;%
   ggvis(~distance) %&gt;% 
   layer_histograms( stack = FALSE, width = 300) </code></pre>
-<div id="plot_id963858096-container" class="ggvis-output-container">
-<div id="plot_id963858096" class="ggvis-output"></div>
+<div id="plot_id849285409-container" class="ggvis-output-container">
+<div id="plot_id849285409" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id963858096_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id963858096" data-renderer="svg">SVG</a>
+<a id="plot_id849285409_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id849285409" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id963858096_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id963858096" data-renderer="canvas">Canvas</a>
+<a id="plot_id849285409_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id849285409" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id963858096_download" class="ggvis-download" data-plot-id="plot_id963858096">Download</a>
+<a id="plot_id849285409_download" class="ggvis-download" data-plot-id="plot_id849285409">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id963858096_spec = {
+var plot_id849285409_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -979,33 +1455,33 @@ var plot_id963858096_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id963858096").parseSpec(plot_id963858096_spec);
+ggvis.getPlot("plot_id849285409").parseSpec(plot_id849285409_spec);
 </script>
 <pre class="r"><code>spark_flights %&gt;% 
   dplyr::filter(arr_delay &lt; 200) %&gt;%
   ggvis(~arr_delay) %&gt;% 
   layer_histograms( stack = FALSE, width = 20) </code></pre>
-<div id="plot_id947708460-container" class="ggvis-output-container">
-<div id="plot_id947708460" class="ggvis-output"></div>
+<div id="plot_id364696213-container" class="ggvis-output-container">
+<div id="plot_id364696213" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id947708460_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id947708460" data-renderer="svg">SVG</a>
+<a id="plot_id364696213_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id364696213" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id947708460_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id947708460" data-renderer="canvas">Canvas</a>
+<a id="plot_id364696213_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id364696213" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id947708460_download" class="ggvis-download" data-plot-id="plot_id947708460">Download</a>
+<a id="plot_id364696213_download" class="ggvis-download" data-plot-id="plot_id364696213">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id947708460_spec = {
+var plot_id364696213_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -1135,7 +1611,7 @@ var plot_id947708460_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id947708460").parseSpec(plot_id947708460_spec);
+ggvis.getPlot("plot_id364696213").parseSpec(plot_id364696213_spec);
 </script>
 <div id="closing-connection" class="section level3">
 <h3>Closing connection</h3>

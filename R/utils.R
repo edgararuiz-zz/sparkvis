@@ -122,17 +122,25 @@ preserve_constants.tbl_spark  <- function(input, output) {
 
 
 #' @export
-compute_count.spark_tbl <- function(x, x_var, w_var = NULL) {
+compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
 
   x_field <- as.character(x_var)[2]
 
-  data <- x
 
-  data_prep <- dplyr::select_(data, x = x_field)
+  data_prep <- dplyr::mutate_(x, x = x_field)
   data_prep <- dplyr::filter(data_prep, !is.na(x))
 
   s <- dplyr::group_by(data_prep, x)
-  s <- dplyr::tally(s)
+
+  if(is.null(w_var)){
+    s <- dplyr::tally(s)
+  }else{
+    w <- as.character(w_var)[2]
+    s <- dplyr::mutate_(s, weight = w)
+    s <- dplyr::summarise(s, n = sum(weight))}
+
+
+
   s <- dplyr::mutate(s, count_ = n, x_ = x)
   s <- dplyr::select(s, count_, x_)
   s <- dplyr::collect(s)

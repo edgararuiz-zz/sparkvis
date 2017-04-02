@@ -3,7 +3,7 @@
 export(apply_props.tbl_spark)
 export(compute_bin.tbl_spark)
 export(compute_boxplot.tbl_spark)
-export(compute_count.spark_tbl)
+export(compute_count.tbl_spark)
 export(eval_vector.tbl_spark)
 export(preserve_constants.tbl_spark)
 export(prop_type.tbl_spark)
