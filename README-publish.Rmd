@@ -95,17 +95,55 @@ spark_flights %>%
 
 **Outliers** are not implemented in this initial version.  Need to find a more appropriate way to display them when working with Big Data.
 
+
+### Carrier over Distance
+
 ```{r}
+flights %>% 
+  ggvis(~carrier,  ~distance) %>% 
+  layer_boxplots()
+
 spark_flights %>% 
   ggvis(~carrier,  ~distance) %>% 
   layer_boxplots()
+
+
 ```
+
+#### Raw Table Comparison
+
+** Data Frame**
+
+```{r}
+
+flights %>% 
+  group_by(carrier) %>%
+  compute_boxplot(~distance)
+```
+
+** Spark Table**
+
+```{r}
+
+
+
+spark_flights %>% 
+  group_by(carrier) %>%
+  compute_boxplot(~distance)
+
+
+```
+
+### Carrier over Arrivel Delay
 
 ```{r}
 spark_flights %>% 
-  ggvis(~carrier,  ~arr_delay) %>% 
+  ggvis(~carrier,  ~dep_time) %>% 
   layer_boxplots()
+
 ```
+
+
 
 ## Histogram
 

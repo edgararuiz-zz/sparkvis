@@ -169,27 +169,27 @@ sc &lt;- spark_connect(master=&quot;local&quot;, config = conf, version = &quot;
 <pre class="r"><code>spark_flights %&gt;% 
   ggvis(~carrier) %&gt;% 
   layer_bars()</code></pre>
-<div id="plot_id704310800-container" class="ggvis-output-container">
-<div id="plot_id704310800" class="ggvis-output"></div>
+<div id="plot_id734280505-container" class="ggvis-output-container">
+<div id="plot_id734280505" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id704310800_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id704310800" data-renderer="svg">SVG</a>
+<a id="plot_id734280505_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id734280505" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id704310800_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id704310800" data-renderer="canvas">Canvas</a>
+<a id="plot_id734280505_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id734280505" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id704310800_download" class="ggvis-download" data-plot-id="plot_id704310800">Download</a>
+<a id="plot_id734280505_download" class="ggvis-download" data-plot-id="plot_id734280505">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id704310800_spec = {
+var plot_id734280505_spec = {
   "data": [
     {
       "name": ".0/count1/stack2",
@@ -317,7 +317,7 @@ var plot_id704310800_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id704310800").parseSpec(plot_id704310800_spec);
+ggvis.getPlot("plot_id734280505").parseSpec(plot_id734280505_spec);
 </script>
 </div>
 <div id="convert-continuos-x-into-discrete-a.k.a-wo-using-as.factor" class="section level3">
@@ -326,27 +326,27 @@ ggvis.getPlot("plot_id704310800").parseSpec(plot_id704310800_spec);
   dplyr::mutate(hour = as.character(hour)) %&gt;%
   ggvis(~hour) %&gt;% 
   layer_bars()</code></pre>
-<div id="plot_id832584845-container" class="ggvis-output-container">
-<div id="plot_id832584845" class="ggvis-output"></div>
+<div id="plot_id865439547-container" class="ggvis-output-container">
+<div id="plot_id865439547" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id832584845_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id832584845" data-renderer="svg">SVG</a>
+<a id="plot_id865439547_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id865439547" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id832584845_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id832584845" data-renderer="canvas">Canvas</a>
+<a id="plot_id865439547_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id865439547" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id832584845_download" class="ggvis-download" data-plot-id="plot_id832584845">Download</a>
+<a id="plot_id865439547_download" class="ggvis-download" data-plot-id="plot_id865439547">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id832584845_spec = {
+var plot_id865439547_spec = {
   "data": [
     {
       "name": ".0/count1/stack2",
@@ -474,7 +474,7 @@ var plot_id832584845_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id832584845").parseSpec(plot_id832584845_spec);
+ggvis.getPlot("plot_id865439547").parseSpec(plot_id865439547_spec);
 </script>
 </div>
 <div id="discrete-x-with-a-weight-variable" class="section level3">
@@ -482,27 +482,27 @@ ggvis.getPlot("plot_id832584845").parseSpec(plot_id832584845_spec);
 <pre class="r"><code>spark_flights %&gt;% 
   ggvis(~carrier, ~distance) %&gt;%
   layer_bars(stack = FALSE)</code></pre>
-<div id="plot_id601594981-container" class="ggvis-output-container">
-<div id="plot_id601594981" class="ggvis-output"></div>
+<div id="plot_id701993687-container" class="ggvis-output-container">
+<div id="plot_id701993687" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id601594981_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id601594981" data-renderer="svg">SVG</a>
+<a id="plot_id701993687_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id701993687" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id601594981_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id601594981" data-renderer="canvas">Canvas</a>
+<a id="plot_id701993687_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id701993687" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id601594981_download" class="ggvis-download" data-plot-id="plot_id601594981">Download</a>
+<a id="plot_id701993687_download" class="ggvis-download" data-plot-id="plot_id701993687">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id601594981_spec = {
+var plot_id701993687_spec = {
   "data": [
     {
       "name": ".0/count1",
@@ -629,37 +629,39 @@ var plot_id601594981_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id601594981").parseSpec(plot_id601594981_spec);
+ggvis.getPlot("plot_id701993687").parseSpec(plot_id701993687_spec);
 </script>
 </div>
 </div>
 <div id="box-plot" class="section level2">
 <h2>Box Plot</h2>
 <p><strong>Outliers</strong> are not implemented in this initial version. Need to find a more appropriate way to display them when working with Big Data.</p>
-<pre class="r"><code>spark_flights %&gt;% 
+<div id="carrier-over-distance" class="section level3">
+<h3>Carrier over Distance</h3>
+<pre class="r"><code>flights %&gt;% 
   ggvis(~carrier,  ~distance) %&gt;% 
   layer_boxplots()</code></pre>
-<div id="plot_id869735525-container" class="ggvis-output-container">
-<div id="plot_id869735525" class="ggvis-output"></div>
+<div id="plot_id834009594-container" class="ggvis-output-container">
+<div id="plot_id834009594" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id869735525_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id869735525" data-renderer="svg">SVG</a>
+<a id="plot_id834009594_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id834009594" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id869735525_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id869735525" data-renderer="canvas">Canvas</a>
+<a id="plot_id834009594_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id834009594" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id869735525_download" class="ggvis-download" data-plot-id="plot_id869735525">Download</a>
+<a id="plot_id834009594_download" class="ggvis-download" data-plot-id="plot_id834009594">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id869735525_spec = {
+var plot_id834009594_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -673,7 +675,338 @@ var plot_id869735525_spec = {
           "median_": "number"
         }
       },
-      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n94,1391,\"9E\",228,740,509\n187,2586,\"AA\",888,1521,1096\n2402,2402,\"AS\",2402,2402,2402\n173,2586,\"B6\",340,1428,1023\n94,2586,\"DL\",762,1598,1020\n80,1215,\"EV\",284,748,533\n1620,1620,\"F9\",1620,1620,1620\n397,762,\"FL\",397,762,762\n4983,4983,\"HA\",4983,4983,4983\n184,1147,\"MQ\",431,762,502\n229,1008,\"OO\",419,419,419\n116,2586,\"UA\",937,2425,1400\n17,2153,\"US\",214,544,529\n2248,2586,\"VX\",2475,2586,2475\n169,2133,\"WN\",725,1411,748\n96,544,\"YV\",229,544,229"
+      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n94,1391,\"9E\",228,740,509\n187,2454,\"AA\",888,1521,1096\n2402,2402,\"AS\",2402,2402,2402\n173,2586,\"B6\",340,1428,1023\n94,2586,\"DL\",762,1598,1020\n80,1389,\"EV\",284,748,533\n1620,1620,\"F9\",1620,1620,1620\n397,762,\"FL\",397,762,762\n4983,4983,\"HA\",4983,4983,4983\n184,1147,\"MQ\",431,762,502\n419,419,\"OO\",419,419,419\n116,3370,\"UA\",937,2425,1400\n17,544,\"US\",214,544,529\n2378,2586,\"VX\",2475,2586,2475\n169,2133,\"WN\",725,1411,748\n96,544,\"YV\",229,544,229"
+    },
+    {
+      "name": ".0/group_by1/boxplot2",
+      "source": ".0/group_by1/boxplot2_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "value_": "number"
+        }
+      },
+      "values": "\"value_\",\"carrier\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1521,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1521,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n1587,\"9E\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n2586,\"AA\"\n2475,\"AA\"\n2475,\"AA\"\n733,\"OO\"\n1008,\"OO\"\n1008,\"OO\"\n1008,\"OO\"\n1008,\"OO\"\n229,\"OO\"\n488,\"OO\"\n488,\"OO\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n4963,\"UA\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2153,\"US\"\n2153,\"US\"\n2133,\"US\"\n2133,\"US\"\n2153,\"US\"\n2133,\"US\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\"\n2248,\"VX\""
+    },
+    {
+      "name": ".0/group_by1/boxplot2/boxplot_outliers3",
+      "source": ".0/group_by1/boxplot2/boxplot_outliers3_flat",
+      "transform": [
+        {
+          "type": "treefacet",
+          "keys": [
+            "data.carrier"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/xcenter",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"9E\"\n\"AA\"\n\"AS\"\n\"B6\"\n\"DL\"\n\"EV\"\n\"F9\"\n\"FL\"\n\"HA\"\n\"MQ\"\n\"OO\"\n\"UA\"\n\"US\"\n\"VX\"\n\"WN\"\n\"YV\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n-231.3\n5231.3"
+    }
+  ],
+  "scales": [
+    {
+      "padding": 0.1,
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "name": "x",
+      "points": false,
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "points": true,
+      "padding": 1.1,
+      "name": "xcenter",
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/xcenter",
+        "field": "data.domain"
+      },
+      "sort": false,
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.min_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.max_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              },
+              "width": {
+                "value": 0.5
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.lower_"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "data.upper_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2"
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "properties": {
+            "update": {
+              "stroke": {
+                "value": "#000000"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "scale": "x",
+                "field": "data.carrier"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.median_"
+              },
+              "width": {
+                "scale": "x",
+                "band": true
+              },
+              "height": {
+                "value": 1
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "from": {
+        "data": ".0/group_by1/boxplot2/boxplot_outliers3"
+      },
+      "marks": [
+        {
+          "type": "symbol",
+          "properties": {
+            "update": {
+              "size": {
+                "value": 50
+              },
+              "fill": {
+                "value": "black"
+              },
+              "y": {
+                "scale": "y",
+                "field": "data.value_"
+              },
+              "x": {
+                "scale": "xcenter",
+                "field": "data.carrier"
+              }
+            },
+            "ggvis": {
+              "data": {
+                "value": ".0/group_by1/boxplot2/boxplot_outliers3"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "title": "carrier"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "distance"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id834009594").parseSpec(plot_id834009594_spec);
+</script>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier,  ~distance) %&gt;% 
+  layer_boxplots()</code></pre>
+<div id="plot_id836425576-container" class="ggvis-output-container">
+<div id="plot_id836425576" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id836425576_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id836425576" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id836425576_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id836425576" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id836425576_download" class="ggvis-download" data-plot-id="plot_id836425576">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id836425576_spec = {
+  "data": [
+    {
+      "name": ".0/group_by1/boxplot2_flat",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "min_": "number",
+          "max_": "number",
+          "lower_": "number",
+          "upper_": "number",
+          "median_": "number"
+        }
+      },
+      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n94,1391,\"9E\",228,740,509\n187,2454,\"AA\",888,1521,1096\n2402,2402,\"AS\",2402,2402,2402\n173,2586,\"B6\",340,1428,1023\n94,2586,\"DL\",762,1598,1020\n80,1389,\"EV\",284,748,533\n1620,1620,\"F9\",1620,1620,1620\n397,762,\"FL\",397,762,762\n4983,4983,\"HA\",4983,4983,4983\n184,1147,\"MQ\",431,762,502\n488,229,\"OO\",419,419,419\n116,3370,\"UA\",937,2425,1400\n17,544,\"US\",214,544,529\n2378,2586,\"VX\",2475,2586,2475\n169,2133,\"WN\",725,1411,748\n96,544,\"YV\",229,544,229"
     },
     {
       "name": ".0/group_by1/boxplot2",
@@ -965,32 +1298,88 @@ var plot_id869735525_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id869735525").parseSpec(plot_id869735525_spec);
+ggvis.getPlot("plot_id836425576").parseSpec(plot_id836425576_spec);
 </script>
+<div id="raw-table-comparison" class="section level4">
+<h4>Raw Table Comparison</h4>
+<p>** Data Frame**</p>
+<pre class="r"><code>flights %&gt;% 
+  group_by(carrier) %&gt;%
+  compute_boxplot(~distance)</code></pre>
+<pre><code>## Source: local data frame [16 x 7]
+## Groups: carrier [16]
+## 
+##    carrier  min_ lower_ median_ upper_  max_     outliers_
+##      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;        &lt;list&gt;
+## 1       9E    94    228     509    740  1391    &lt;dbl [55]&gt;
+## 2       AA   187    888    1096   1521  2454 &lt;dbl [4,639]&gt;
+## 3       AS  2402   2402    2402   2402  2402     &lt;dbl [0]&gt;
+## 4       B6   173    340    1023   1428  2586     &lt;dbl [0]&gt;
+## 5       DL    94    762    1020   1598  2586     &lt;dbl [0]&gt;
+## 6       EV    80    284     533    748  1389     &lt;dbl [0]&gt;
+## 7       F9  1620   1620    1620   1620  1620     &lt;dbl [0]&gt;
+## 8       FL   397    397     762    762   762     &lt;dbl [0]&gt;
+## 9       HA  4983   4983    4983   4983  4983     &lt;dbl [0]&gt;
+## 10      MQ   184    431     502    762  1147     &lt;dbl [0]&gt;
+## 11      OO   419    419     419    419   419     &lt;dbl [8]&gt;
+## 12      UA   116    937    1400   2425  3370   &lt;dbl [365]&gt;
+## 13      US    17    214     529    544   544 &lt;dbl [2,271]&gt;
+## 14      VX  2378   2475    2475   2586  2586   &lt;dbl [365]&gt;
+## 15      WN   169    725     748   1411  2133     &lt;dbl [0]&gt;
+## 16      YV    96    229     229    544   544     &lt;dbl [0]&gt;</code></pre>
+<p>** Spark Table**</p>
 <pre class="r"><code>spark_flights %&gt;% 
-  ggvis(~carrier,  ~arr_delay) %&gt;% 
+  group_by(carrier) %&gt;%
+  compute_boxplot(~distance)</code></pre>
+<pre><code>## Source: local data frame [16 x 7]
+## Groups: carrier [16]
+## 
+##    carrier  min_ lower_ median_ upper_  max_ outliers_
+##      &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;list&gt;
+## 1       9E    94    228     509    740  1391 &lt;dbl [0]&gt;
+## 2       AA   187    888    1096   1521  2454 &lt;dbl [0]&gt;
+## 3       AS  2402   2402    2402   2402  2402 &lt;dbl [0]&gt;
+## 4       B6   173    340    1023   1428  2586 &lt;dbl [0]&gt;
+## 5       DL    94    762    1020   1598  2586 &lt;dbl [0]&gt;
+## 6       EV    80    284     533    748  1389 &lt;dbl [0]&gt;
+## 7       F9  1620   1620    1620   1620  1620 &lt;dbl [0]&gt;
+## 8       FL   397    397     762    762   762 &lt;dbl [0]&gt;
+## 9       HA  4983   4983    4983   4983  4983 &lt;dbl [0]&gt;
+## 10      MQ   184    431     502    762  1147 &lt;dbl [0]&gt;
+## 11      OO   488    419     419    419   229 &lt;dbl [0]&gt;
+## 12      UA   116    937    1400   2425  3370 &lt;dbl [0]&gt;
+## 13      US    17    214     529    544   544 &lt;dbl [0]&gt;
+## 14      VX  2378   2475    2475   2586  2586 &lt;dbl [0]&gt;
+## 15      WN   169    725     748   1411  2133 &lt;dbl [0]&gt;
+## 16      YV    96    229     229    544   544 &lt;dbl [0]&gt;</code></pre>
+</div>
+</div>
+<div id="carrier-over-arrivel-delay" class="section level3">
+<h3>Carrier over Arrivel Delay</h3>
+<pre class="r"><code>spark_flights %&gt;% 
+  ggvis(~carrier,  ~dep_time) %&gt;% 
   layer_boxplots()</code></pre>
-<div id="plot_id965847471-container" class="ggvis-output-container">
-<div id="plot_id965847471" class="ggvis-output"></div>
+<div id="plot_id971869747-container" class="ggvis-output-container">
+<div id="plot_id971869747" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id965847471_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id965847471" data-renderer="svg">SVG</a>
+<a id="plot_id971869747_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id971869747" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id965847471_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id965847471" data-renderer="canvas">Canvas</a>
+<a id="plot_id971869747_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id971869747" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id965847471_download" class="ggvis-download" data-plot-id="plot_id965847471">Download</a>
+<a id="plot_id971869747_download" class="ggvis-download" data-plot-id="plot_id971869747">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id965847471_spec = {
+var plot_id971869747_spec = {
   "data": [
     {
       "name": ".0/group_by1/boxplot2_flat",
@@ -1004,7 +1393,7 @@ var plot_id965847471_spec = {
           "median_": "number"
         }
       },
-      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n-68,216,\"9E\",-21,15,-7\n-75,173,\"AA\",-21,8,-9\n-74,132,\"AS\",-32,2,-17\n-71,185,\"B6\",-14,17,-3\n-71,183.43,\"DL\",-20,8,-8\n-62,211.93,\"EV\",-14,26,-1\n-47,239.6,\"F9\",-9,31,6\n-44,263.299999999999,\"FL\",-7,24,5\n-70,125.59,\"HA\",-27.75,2.75,-13\n-53,177,\"MQ\",-13,18,-1\n-26,152.24,\"OO\",-16,6,-7\n-75,178,\"UA\",-18,12,-6\n-70,141,\"US\",-15,8,-6\n-86,222.85,\"VX\",-23,8,-9\n-58,212,\"WN\",-15,15,-3\n-46,212,\"YV\",-16,24.25,-2"
+      "values": "\"min_\",\"max_\",\"carrier\",\"lower_\",\"upper_\",\"median_\"\n3,2357,\"9E\",1023,1857,1559\n1,2400,\"AA\",854,1707,1337\n651,2205,\"AS\",717.75,1825,1805\n1,2400,\"B6\",902,1837,1411\n2,2400,\"DL\",900,1751,1437\n1,2400,\"EV\",926,1756,1356\n40,2243,\"F9\",914,1735.75,1719\n2,2355,\"FL\",1000.5,1805,1418\n900,959,\"HA\",934.25,957.75,954\n17,2359,\"MQ\",1045,1732,1447\n1751,1846,\"OO\",1752,1803,1758\n1,2358,\"UA\",855,1733,1353\n2,2347,\"US\",834,1626,1221\n7,2356,\"VX\",915,1721,1206\n1,2359,\"WN\",913,1710,1251\n1309,2004,\"YV\",1553,1734,1638"
     },
     {
       "name": ".0/group_by1/boxplot2",
@@ -1064,7 +1453,7 @@ var plot_id965847471_spec = {
           "domain": "number"
         }
       },
-      "values": "\"domain\"\n-103.465\n280.764999999999"
+      "values": "\"domain\"\n-118.95\n2519.95"
     }
   ],
   "scales": [
@@ -1280,7 +1669,7 @@ var plot_id965847471_spec = {
       "orient": "left",
       "layer": "back",
       "grid": true,
-      "title": "arr_delay"
+      "title": "dep_time"
     }
   ],
   "padding": null,
@@ -1296,8 +1685,9 @@ var plot_id965847471_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id965847471").parseSpec(plot_id965847471_spec);
+ggvis.getPlot("plot_id971869747").parseSpec(plot_id971869747_spec);
 </script>
+</div>
 </div>
 <div id="histogram" class="section level2">
 <h2>Histogram</h2>
@@ -1305,27 +1695,27 @@ ggvis.getPlot("plot_id965847471").parseSpec(plot_id965847471_spec);
   dplyr::filter(distance &gt; 0) %&gt;%
   ggvis(~distance) %&gt;% 
   layer_histograms( stack = FALSE, width = 300) </code></pre>
-<div id="plot_id849285409-container" class="ggvis-output-container">
-<div id="plot_id849285409" class="ggvis-output"></div>
+<div id="plot_id933906918-container" class="ggvis-output-container">
+<div id="plot_id933906918" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id849285409_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id849285409" data-renderer="svg">SVG</a>
+<a id="plot_id933906918_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id933906918" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id849285409_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id849285409" data-renderer="canvas">Canvas</a>
+<a id="plot_id933906918_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id933906918" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id849285409_download" class="ggvis-download" data-plot-id="plot_id849285409">Download</a>
+<a id="plot_id933906918_download" class="ggvis-download" data-plot-id="plot_id933906918">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id849285409_spec = {
+var plot_id933906918_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -1455,33 +1845,33 @@ var plot_id849285409_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id849285409").parseSpec(plot_id849285409_spec);
+ggvis.getPlot("plot_id933906918").parseSpec(plot_id933906918_spec);
 </script>
 <pre class="r"><code>spark_flights %&gt;% 
   dplyr::filter(arr_delay &lt; 200) %&gt;%
   ggvis(~arr_delay) %&gt;% 
   layer_histograms( stack = FALSE, width = 20) </code></pre>
-<div id="plot_id364696213-container" class="ggvis-output-container">
-<div id="plot_id364696213" class="ggvis-output"></div>
+<div id="plot_id548927773-container" class="ggvis-output-container">
+<div id="plot_id548927773" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id364696213_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id364696213" data-renderer="svg">SVG</a>
+<a id="plot_id548927773_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id548927773" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id364696213_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id364696213" data-renderer="canvas">Canvas</a>
+<a id="plot_id548927773_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id548927773" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id364696213_download" class="ggvis-download" data-plot-id="plot_id364696213">Download</a>
+<a id="plot_id548927773_download" class="ggvis-download" data-plot-id="plot_id548927773">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id364696213_spec = {
+var plot_id548927773_spec = {
   "data": [
     {
       "name": ".0/bin1",
@@ -1611,7 +2001,7 @@ var plot_id364696213_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id364696213").parseSpec(plot_id364696213_spec);
+ggvis.getPlot("plot_id548927773").parseSpec(plot_id548927773_spec);
 </script>
 <div id="closing-connection" class="section level3">
 <h3>Closing connection</h3>

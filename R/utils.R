@@ -157,23 +157,81 @@ compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
 
   x_var <- as.character(var)[2]
 
+
   s <- dplyr::mutate_(x , x_var = var)
-  s <- dplyr::summarise(s, min_ = percentile(x_var, 0),
-              lower_ = percentile(x_var, 0.25),
-              median_ = percentile(x_var, 0.50),
-              upper_ = percentile(x_var, 0.75),
-              max_ = percentile(x_var, 0.99))
-  s<- dplyr::collect(s)
-  s<- dplyr::mutate(s, outliers_ = list(numeric()))
+  s <- dplyr::summarise(s,
+                        min_ = percentile(x_var, 0),
+                        lower_ = percentile(x_var, 0.25),
+                        median_ = percentile(x_var, 0.50),
+                        upper_ = percentile(x_var, 0.75),
+                        max_ = percentile(x_var, 1),
+                        max_raw = max(x_var),
+                        min_raw = min(x_var))
+
+  s <- dplyr::mutate(s, iqr = (upper_ - lower_) * 1.5)
+
+  s <- dplyr::mutate(s,
+                     min_iqr = lower_ - iqr,
+                     max_iqr = upper_ + iqr
+  )
+
+  s <- dplyr::mutate(s,
+                     max_ = ifelse(max_raw > max_iqr, max_iqr, max_),
+                     min_ = ifelse(min_raw < min_iqr, min_iqr, min_),
+  )
+
+  groups <- dplyr::select(s, -min_, -lower_, -median_, -upper_, -max_, -iqr, -min_iqr, -max_iqr, -min_raw, -max_raw)
+  groups <- colnames(groups)
+
+
+  o <- dplyr::mutate_(s, "x_var" = groups)
+
+  p <- dplyr::mutate_(x, "y_var" = groups)
+  p <- dplyr::mutate_(p, "value" = var)
+  p <- dplyr::ungroup(p)
+  p <- dplyr::select(p, y_var, value)
+
+
+  q <- dplyr::inner_join(o, p , by = c("x_var" = "y_var"))
+  #q <- dplyr::select_(q, groups, "value")
+
+  q_max <- dplyr::filter(q, value < max_iqr)
+
+  q_min <- dplyr::filter(q, value > min_iqr)
+
+  q_upper <- dplyr::group_by_(q_max, groups)
+  q_upper <- dplyr::summarise(q_upper, new_upper = max(value))
+  q_upper <- dplyr::ungroup(q_upper)
+  q_upper <- dplyr::mutate_(q_upper, "x_var" = groups)
+  q_upper <- dplyr::select(q_upper, x_var, new_upper)
+
+
+  q_lower <- dplyr::group_by_(q_min, groups)
+  q_lower <- dplyr::summarise(q_lower, new_lower = min(value))
+  q_lower <- dplyr::ungroup(q_lower)
+  q_lower <- dplyr::mutate_(q_lower, "x_var" = groups)
+  q_lower <- dplyr::select(q_lower, x_var, new_lower)
+
+  s <- dplyr::mutate_(s, "x_var" = groups)
+
+  s <- dplyr::left_join(s, q_upper, by = "x_var")
+  s <- dplyr::left_join(s, q_lower, by = "x_var")
+
+
+  s <- dplyr::collect(s)
+
+  s <- dplyr::mutate(s, max_ = ifelse(is.nan(new_upper), max_, new_upper))
+  s <- dplyr::mutate(s, min_ = ifelse(is.nan(new_lower), min_, new_lower))
+
+  s <- dplyr::select(s, -iqr, -min_iqr, -max_iqr, -min_raw, -max_raw, -new_lower, -new_upper,  -x_var)
 
   s <- as.data.frame(s,  stringsAsFactors = FALSE)
 
-  groups <- dplyr::select(s, -min_, -lower_, -median_, -upper_, -max_, -outliers_)
 
-  groups <- colnames(groups)
-
+  s <- dplyr::mutate(s, outliers_ = list(numeric()))
   s <- dplyr::group_by_(s, groups)
   s <- dplyr::arrange_(s, groups)
+
 
   return(s)
 
