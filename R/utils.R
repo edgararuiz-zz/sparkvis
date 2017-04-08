@@ -117,10 +117,6 @@ preserve_constants.tbl_spark  <- function(input, output) {
       {ggvis:::preserve_constants.data.frame(input, output)}
 }
 
-
-
-
-
 #' @export
 compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
 

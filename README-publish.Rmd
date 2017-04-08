@@ -8,6 +8,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **sparkvis** adds the necessary methods to **ggvis** to allow it to handle **sparklyr's** *tbl_spark* class data sets.  
 
+New **layer**:
+
+- layer_raster
+
+New **compute**:
+
+- compute_raster
+
 Currently implemented **layers**:
 
 - layer_bars
@@ -19,7 +27,6 @@ Currently implemented **layers**:
 To do:
 
 - Add support to Fill prop, especially for layer_bars
-
 
 ### Installation
 
@@ -52,6 +59,7 @@ library(nycflights13)
 conf <- spark_config()
 conf$`sparklyr.shell.driver-memory` <- "8G"
 sc <- spark_connect(master="local", config = conf, version = "2.1.0")
+
 ```
 
 ### Copying 'flights' to the Spark environment
@@ -61,6 +69,57 @@ sc <- spark_connect(master="local", config = conf, version = "2.1.0")
 spark_flights <- copy_to(sc, flights)
 ```
 
+## Raster
+
+### New compute_raster function
+
+```{r}
+s <-spark_flights %>%
+  compute_raster(~arr_delay, ~dep_delay) 
+
+head(s)
+```
+
+### New Layer
+
+```{r}
+spark_flights %>%
+  ggvis(~dep_time, ~arr_time) %>%
+  layer_raster()
+
+```
+
+### 'res' argument
+
+Use 'res' to set the size of the grid for the plot.  The smaller the number, the less data will be brought back into R memory for plotting.
+
+```{r}
+spark_flights %>%
+  ggvis(~dep_time, ~arr_time) %>%
+  layer_raster(res = 10)
+
+```
+
+### 'intersects' argument
+
+Data that is highly 'clumped' together may mask the true relationship between the variables.  Increasing the number of minimum intersections (where x meets y), allows the plot to drop a lot of less significant rectangles. I found that even a small increase makes a big difference in understanding the data.
+
+```{r}
+spark_flights %>%
+  ggvis(~dep_time, ~arr_time) %>%
+  layer_raster(intersects = 10)
+
+```
+
+### Fancier
+
+```{r}
+spark_flights %>%
+  ggvis(~dep_time, ~arr_time) %>%
+  scale_numeric("fill", range = c("orange","blue")) %>%
+  layer_raster(intersects = 1, res= 50)
+
+```
 
 ## Bar chart
 
@@ -77,8 +136,7 @@ spark_flights %>%
 ```{r}
 spark_flights %>% 
   dplyr::mutate(hour = as.character(hour)) %>%
-  ggvis(~hour) %>% 
-  layer_bars()
+  ggvis(~hour) 
 ```
 
 ### Discrete X with a Weight variable
