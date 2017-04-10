@@ -10,14 +10,13 @@ prop_type.tbl_spark <- function(data, prop) {
 
   if("tbl_spark" %in% class(data))
   {
-    x_var <- as.character(prop$value)
     suppressMessages({
-      top_rows <- data %>%
-        dplyr::select_(x_var) %>%
-        dplyr::top_n(10) %>%
-        dplyr::collect()
+      top_rows <- dplyr::mutate_(data, "new_field" = prop$value)
+      top_rows <- dplyr::select(top_rows, new_field)
+      top_rows <- dplyr::top_n(top_rows, 10)
+      top_rows <- dplyr::collect(top_rows)
     })
-    s <- ggvis::vector_type(top_rows[[x_var]])
+    s <- ggvis::vector_type(top_rows[[1]])
     return(s)
 
   }else
@@ -28,14 +27,12 @@ prop_type.tbl_spark <- function(data, prop) {
 #' @export
 eval_vector.tbl_spark <- function(x, f) {
   suppressMessages({
-    field_name <- as.character(f)[2]
-
-    top_rows <- x %>%
-      dplyr::select_(field_name) %>%
-      dplyr::top_n(10) %>%
-      dplyr::collect()
+    top_rows <- dplyr::mutate_(x, "new_field" = f)
+    top_rows <- dplyr::select(top_rows,new_field)
+    top_rows <- dplyr::top_n(top_rows, 10)
+    top_rows <- dplyr::collect(top_rows)
   })
-  return(top_rows[[field_name]])
+  return(top_rows[[1]])
 }
 
 #' @export
@@ -45,9 +42,11 @@ compute_bin.tbl_spark  <- function(x, x_var, w_var = NULL,
                                    pad = FALSE, binwidth = NULL){
 
 
-  x_name <- as.character(x_var)[2]
+  #x_name <- as.character(x_var)[2]
 
-  data_prep <- dplyr::select_(x, x_field = x_name)
+
+  data_prep <- dplyr::mutate_(x, "x_field" = x_var)
+  data_prep <- dplyr::select(data_prep, x_field)
   data_prep <- dplyr::filter(data_prep, !is.na(x_field))
   data_prep <- dplyr::mutate(data_prep, x_field = as.double(x_field))
 
@@ -120,10 +119,8 @@ preserve_constants.tbl_spark  <- function(input, output) {
 #' @export
 compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
 
-  x_field <- as.character(x_var)[2]
-
-
-  data_prep <- dplyr::mutate_(x, x = x_field)
+  #x_field <- as.character(x_var)[2]
+  data_prep <- dplyr::mutate_(x, "x" = x_var)
   data_prep <- dplyr::filter(data_prep, !is.na(x))
 
   s <- dplyr::group_by(data_prep, x)
@@ -151,10 +148,8 @@ compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
 #' @export
 compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
 
-  x_var <- as.character(var)[2]
 
-
-  s <- dplyr::mutate_(x , x_var = var)
+  s <- dplyr::mutate_(x , "x_var" = var)
   s <- dplyr::summarise(s,
                         min_ = percentile(x_var, 0),
                         lower_ = percentile(x_var, 0.25),
@@ -173,7 +168,7 @@ compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
 
   s <- dplyr::mutate(s,
                      max_ = ifelse(max_raw > max_iqr, max_iqr, max_),
-                     min_ = ifelse(min_raw < min_iqr, min_iqr, min_),
+                     min_ = ifelse(min_raw < min_iqr, min_iqr, min_)
   )
 
   groups <- dplyr::select(s, -min_, -lower_, -median_, -upper_, -max_, -iqr, -min_iqr, -max_iqr, -min_raw, -max_raw)
