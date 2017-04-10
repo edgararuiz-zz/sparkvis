@@ -67,6 +67,7 @@ sc <- spark_connect(master="local", config = conf, version = "2.1.0")
 
 ```{r}
 spark_flights <- copy_to(sc, flights)
+
 ```
 
 ## Raster
@@ -78,6 +79,7 @@ s <-spark_flights %>%
   compute_raster(~arr_delay, ~dep_delay) 
 
 head(s)
+
 ```
 
 ### New Layer
@@ -98,6 +100,7 @@ spark_flights %>%
   ggvis(~dep_time, ~arr_time) %>%
   layer_raster(res = 10)
 
+
 ```
 
 ### 'intersects' argument
@@ -109,6 +112,7 @@ spark_flights %>%
   ggvis(~dep_time, ~arr_time) %>%
   layer_raster(intersects = 10)
 
+
 ```
 
 ### Fancier
@@ -116,8 +120,18 @@ spark_flights %>%
 ```{r}
 spark_flights %>%
   ggvis(~dep_time, ~arr_time) %>%
-  scale_numeric("fill", range = c("orange","blue")) %>%
-  layer_raster(intersects = 1, res= 50)
+  scale_numeric("fill", range = c("white","blue")) %>%
+  layer_raster(intersects = 0, res= 50, strokeOpacity = 0.2)
+
+```
+
+### Shiny enabled
+
+```{r, eva = FALSE}
+spark_flights %>%
+  ggvis(~dep_time, ~arr_time) %>%
+  layer_raster(res = input_slider(10,100, value = 50, label = "Resolution"),
+               intersects = input_slider(0,1000, value = 0, label = "Minimum Intersects"))
 
 ```
 
@@ -135,8 +149,8 @@ spark_flights %>%
 
 ```{r}
 spark_flights %>% 
-  dplyr::mutate(hour = as.character(hour)) %>%
-  ggvis(~hour) 
+  #dplyr::mutate(hour = as.character(hour)) %>%
+  ggvis(x = ~as.character(hour)) 
 ```
 
 ### Discrete X with a Weight variable
@@ -162,8 +176,9 @@ flights %>%
   layer_boxplots()
 
 spark_flights %>% 
-  ggvis(~carrier,  ~distance) %>% 
+  ggvis(~carrier,  ~distance ) %>% 
   layer_boxplots()
+
 
 
 ```
@@ -182,8 +197,6 @@ flights %>%
 ** Spark Table**
 
 ```{r}
-
-
 
 spark_flights %>% 
   group_by(carrier) %>%
@@ -209,14 +222,14 @@ spark_flights %>%
 ```{r}
 spark_flights %>% 
   dplyr::filter(distance > 0) %>%
-  ggvis(~distance) %>% 
-  layer_histograms( stack = FALSE, width = 300) 
+  ggvis(~arr_delay) %>% 
+  layer_histograms( stack = FALSE, width = 5) 
 ```
 
 ```{r}
 spark_flights %>% 
   dplyr::filter(arr_delay < 200) %>%
-  ggvis(~arr_delay) %>% 
+  ggvis(~arr_delay - dep_delay) %>% 
   layer_histograms( stack = FALSE, width = 20) 
 ```
 
