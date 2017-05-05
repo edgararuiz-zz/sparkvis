@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 tests
+other
 derby.log
 log4j.spark.log
 rsconnect

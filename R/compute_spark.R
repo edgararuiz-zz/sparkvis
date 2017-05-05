@@ -1,38 +1,25 @@
 #' @export
-apply_props.tbl_spark <- function(data, props) {
-    cols <- lapply(props, prop_value, data = data)
-    colnames(cols) <- vapply(props, prop_label, character(1))
-    quickdf(cols)
-  }
+compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
 
-#' @export
-prop_type.tbl_spark <- function(data, prop) {
+  plot_table <- dplyr::mutate_(x, "x" = x_var)
+  plot_table <- dplyr::filter(plot_table, !is.na(x))
+  plot_table <- dplyr::group_by(plot_table, x)
 
-  if("tbl_spark" %in% class(data))
-  {
-    suppressMessages({
-      top_rows <- dplyr::mutate_(data, "new_field" = prop$value)
-      top_rows <- dplyr::select(top_rows, new_field)
-      top_rows <- dplyr::top_n(top_rows, 10)
-      top_rows <- dplyr::collect(top_rows)
-    })
-    s <- ggvis::vector_type(top_rows[[1]])
-    return(s)
+  if(is.null(w_var)){
+    plot_table <- dplyr::tally(plot_table)
+    }
+  else
+    {
+    w <- as.character(w_var)[2]
+    plot_table <- dplyr::mutate_(plot_table, weight = w)
+    plot_table <- dplyr::summarise(plot_table, n = sum(weight))
+    }
 
-  }else
-  {ggvis::vector_type(ggvis:::prop_value(prop, data))}
-}
+  plot_table <- dplyr::mutate(plot_table, count_ = n, x_ = x)
+  plot_table <- dplyr::select(plot_table, count_, x_)
+  plot_table <- dplyr::collect(plot_table)
+  plot_table <- as.data.frame(plot_table, stringsAsFactors = FALSE)
 
-
-#' @export
-eval_vector.tbl_spark <- function(x, f) {
-  suppressMessages({
-    top_rows <- dplyr::mutate_(x, "new_field" = f)
-    top_rows <- dplyr::select(top_rows,new_field)
-    top_rows <- dplyr::top_n(top_rows, 10)
-    top_rows <- dplyr::collect(top_rows)
-  })
-  return(top_rows[[1]])
 }
 
 #' @export
@@ -41,50 +28,42 @@ compute_bin.tbl_spark  <- function(x, x_var, w_var = NULL,
                                    boundary = NULL, closed = c("right", "left"),
                                    pad = FALSE, binwidth = NULL){
 
-
-  #x_name <- as.character(x_var)[2]
-
-
   data_prep <- dplyr::mutate_(x, "x_field" = x_var)
   data_prep <- dplyr::select(data_prep, x_field)
   data_prep <- dplyr::filter(data_prep, !is.na(x_field))
   data_prep <- dplyr::mutate(data_prep, x_field = as.double(x_field))
 
-  s <- dplyr::summarise(data_prep,
+  data_prep <- dplyr::summarise(data_prep,
                         max_x = max(x_field),
                         min_x = min(x_field),
                         mean_x = mean(x_field))
-  s <- dplyr::collect(s)
+  data_prep <- dplyr::collect(data_prep)
 
 
-  xmin <- s$min_x
-  xmax <- s$max_x
-  xmean <- s$mean_x
-
-  width <- ifelse(is.null(width), 1, width)
-
-  bins <- ceiling((xmax - xmin) / width)
-
-  center <- ifelse(is.null(center), xmean, center)
-
-  center_point <- center - (width  / 2)
-
-  left_bins <- ceiling((center - xmin) / width)
-
-  left_value <- center_point - (left_bins * width)
+  width         <- ifelse(is.null(width), 1, width)
+  bins          <- ceiling(( data_prep$max_x - data_prep$min_x) / width)
+  center        <- ifelse(is.null(center), data_prep$mean_x , center)
+  center_point  <- center - (width  / 2)
+  left_bins     <- ceiling((center - data_prep$min_x) / width)
+  left_value    <- center_point - (left_bins * width)
+  new_bins      <- left_value + (c(0:(bins + 1)) * width)
 
 
-  new_bins <- left_value + (c(0:(bins + 1)) * width)
-
-
-  all_bins <- data.frame(key_bin = 0:(length(new_bins) - 2),
-                         bin = 1:(length(new_bins) - 1),
-                         bin_ceiling = head(new_bins, - 1),
-                         bin_floor = tail(new_bins, -1))
+  all_bins <- data.frame(
+                           key_bin = 0:(length(new_bins) - 2),
+                           bin = 1:(length(new_bins) - 1),
+                           bin_ceiling = head(new_bins, - 1),
+                           bin_floor = tail(new_bins, -1)
+                         )
 
 
 
-  plot_table <- sparklyr::ft_bucketizer(data_prep, input.col = "x_field", output.col = "key_bin", splits = new_bins)
+  plot_table <- sparklyr::ft_bucketizer(
+                                          data_prep,
+                                          input.col = "x_field",
+                                          output.col = "key_bin",
+                                          splits = new_bins
+                                        )
   plot_table <- dplyr::group_by(plot_table, key_bin)
   plot_table <- dplyr::tally(plot_table)
   plot_table <- dplyr::collect(plot_table)
@@ -98,50 +77,21 @@ compute_bin.tbl_spark  <- function(x, x_var, w_var = NULL,
 
   plot_table <- dplyr::full_join(plot_table, all_bins, by = "key_bin")
   plot_table <- dplyr::arrange(plot_table, key_bin)
-  plot_table <- dplyr::mutate(plot_table, n = ifelse(!is.na(n), n, 0),
-                              width = width)
-  plot_table <- dplyr::select(plot_table, count_ = n, x_ = x, xmin_ = bin_ceiling , xmax_ = bin_floor, width_ = width)
+  plot_table <- dplyr::mutate(
+                                plot_table,
+                                n = ifelse(!is.na(n), n, 0),
+                                width = width
+                              )
+  plot_table <- dplyr::select(
+                                plot_table,
+                                count_ = n,
+                                x_ = x,
+                                xmin_ = bin_ceiling ,
+                                xmax_ = bin_floor,
+                                width_ = width
+                              )
 
   plot_table <- as.data.frame(plot_table,  stringsAsFactors = FALSE)
-
-  return(plot_table)
-
-}
-
-
-#' @export
-preserve_constants.tbl_spark  <- function(input, output) {
-  if("tbl_spark" %in% class(input))
-  {output}else
-      {ggvis:::preserve_constants.data.frame(input, output)}
-}
-
-#' @export
-compute_count.tbl_spark <- function(x, x_var, w_var = NULL) {
-
-  #x_field <- as.character(x_var)[2]
-  data_prep <- dplyr::mutate_(x, "x" = x_var)
-  data_prep <- dplyr::filter(data_prep, !is.na(x))
-
-  s <- dplyr::group_by(data_prep, x)
-
-  if(is.null(w_var)){
-    s <- dplyr::tally(s)
-  }else{
-    w <- as.character(w_var)[2]
-    s <- dplyr::mutate_(s, weight = w)
-    s <- dplyr::summarise(s, n = sum(weight))}
-
-
-
-  s <- dplyr::mutate(s, count_ = n, x_ = x)
-  s <- dplyr::select(s, count_, x_)
-  s <- dplyr::collect(s)
-
-  s <- as.data.frame(s,  stringsAsFactors = FALSE)
-
-
-  return(s)
 
 }
 
@@ -150,14 +100,17 @@ compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
 
 
   s <- dplyr::mutate_(x , "x_var" = var)
-  s <- dplyr::summarise(s,
-                        min_ = percentile(x_var, 0),
-                        lower_ = percentile(x_var, 0.25),
-                        median_ = percentile(x_var, 0.50),
-                        upper_ = percentile(x_var, 0.75),
-                        max_ = percentile(x_var, 1),
-                        max_raw = max(x_var),
-                        min_raw = min(x_var))
+  s <- dplyr::summarise(
+                          s,
+                          min_ = percentile(x_var, 0),
+                          lower_ = percentile(x_var, 0.25),
+                          median_ = percentile(x_var, 0.50),
+                          upper_ = percentile(x_var, 0.75),
+                          max_ = percentile(x_var, 1),
+                          max_raw = max(x_var),
+                          min_raw = min(x_var)
+                        )
+
 
   s <- dplyr::mutate(s, iqr = (upper_ - lower_) * 1.5)
 
@@ -184,7 +137,6 @@ compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
 
 
   q <- dplyr::inner_join(o, p , by = c("x_var" = "y_var"))
-  #q <- dplyr::select_(q, groups, "value")
 
   q_max <- dplyr::filter(q, value < max_iqr)
 
@@ -224,6 +176,8 @@ compute_boxplot.tbl_spark <- function(x, var = NULL, coef = 1.5){
   s <- dplyr::arrange_(s, groups)
 
 
+
+
   return(s)
 
 }
@@ -241,9 +195,8 @@ compute_boxplot_outliers.tbl_spark <- function(x) {
 
   colnames(outliers) <- c(groups, "value_")
 
-
   return(outliers)
-  #outliers <- as.data.frame(outliers,  stringsAsFactors = FALSE)
+
 
 }
 
